@@ -31,8 +31,8 @@ public class GruhService {
 
     private final TeacherService teacherService;
 
-    public GruhDto creatGruh(GruhDto dto){
-        Gruh gruh = mapToEntity(dto);
+    public GruhDto creatGruh1(GruhDto dto){
+        Gruh gruh = mapToEntity1(dto);
         if (gruh == null) {
             return null;
         }
@@ -55,7 +55,7 @@ public class GruhService {
     }
 
     public Boolean upDate(Long id, GruhDto dto){
-        Gruh gruh = mapToEntity(dto);
+        Gruh gruh = mapToEntity1(dto);
         Gruh forDelete = repository.findById(id).orElse(null);
         if (forDelete != null) {
             repository.delete(forDelete);
@@ -65,8 +65,7 @@ public class GruhService {
         return false;
     }
 
-    private Gruh mapToEntity(GruhDto dto){
-
+    private Gruh mapToEntity1(GruhDto dto){
         Gruh gruh = Gruh.builder()
                 .groupName(dto.getGroupName())
                 .id(dto.getId())
@@ -84,6 +83,7 @@ public class GruhService {
         }
         return gruh;
     }
+
     private GruhDto maptoDto(Long id){
         Gruh gruh = repository.findById(id).orElse(null);
         if (gruh == null) {
@@ -98,5 +98,4 @@ public class GruhService {
     }
 
 
->>>>>>> 403f730 (second commit)
 }

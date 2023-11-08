@@ -4,6 +4,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,7 +18,7 @@ public class Gruh {
     Long id;
     String groupName;
     @OneToMany(mappedBy = "gruh")
-    List<Student> students;
+    List<Student> students = new ArrayList<>();
     @ManyToOne
     Teacher teacher;
 

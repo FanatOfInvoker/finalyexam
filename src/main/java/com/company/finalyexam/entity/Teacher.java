@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,8 +22,8 @@ public class Teacher {
     String firstName;
     String lastName;
     @OneToMany(mappedBy = "teacher")
-    List<Student> students;
+    List<Student> students = new ArrayList<>();
     @OneToMany(mappedBy = "teacher")
-    List<Gruh> gruhs;
+    List<Gruh> gruhs = new ArrayList<>();
 
 }
