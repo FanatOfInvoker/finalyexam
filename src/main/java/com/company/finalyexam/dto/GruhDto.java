@@ -1,7 +1,11 @@
 package com.company.finalyexam.dto;
 
+
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Data
 @Builder
@@ -11,4 +15,6 @@ import lombok.experimental.FieldDefaults;
 public class GruhDto {
     Long id;
     String groupName;
+    List<Long> studentId = new ArrayList<>();
+    Long teacherId;
 }
